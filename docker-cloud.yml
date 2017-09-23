@@ -1,0 +1,4 @@
+basicNode:
+  image: 'suminc7/basic-node:latest'
+  ports:
+    - '80:8080'
