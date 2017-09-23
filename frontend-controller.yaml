@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/chat-180611/mechat
+        image: gcr.io/chat-180611/mechat:latest
         resources:
           requests:
             cpu: 100m
