@@ -1,9 +1,21 @@
 apiVersion: v1
-kind: Deployment
+kind: ReplicationController
 metadata:
   name: frontend
+  # these labels can be applied automatically
+  # from the labels in the pod template if not set
+  # labels:
+    # app: guestbook
+    # tier: frontend
 spec:
+  # this replicas value is default
+  # modify it according to your case
   replicas: 3
+  # selector can be applied automatically
+  # from the labels in the pod template if not set
+  # selector:
+  #   app: guestbook
+  #   tier: frontend
   template:
     metadata:
       labels:
@@ -11,11 +23,11 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: frontend
+      - name: mechat-frontend
         image: gcr.io/chat-180611/mechat:latest
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
