@@ -11,7 +11,7 @@ steps:
 #    export KUBECONFIG=kubeconfig
 #    kubectl set image deployment/frontend mechat-frontend=gcr.io/$PROJECT_ID/mechat:$REVISION_ID
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ['set', 'image', 'deployment/frontend', 'mechat-frontend=gcr.io/$PROJECT_ID/mechat:$REVISION_ID']
+  args: ['set', 'image', 'deployment/frontend', 'mechat-frontend=gcr.io/$PROJECT_ID/mechat:latest']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=mechat'
