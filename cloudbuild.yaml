@@ -7,6 +7,7 @@ steps:
   - '-c'
   - |
     gcloud components install kubectl
+    gcloud container clusters get-credentials CLOUDSDK_CONTAINER_CLUSTER --zone CLOUDSDK_COMPUTE_ZONE
     gsutil cp gs://container-kubernetes-key/kubeconfig .
     export KUBECONFIG=kubeconfig
     kubectl set image deployment/frontend mechat-frontend=gcr.io/$PROJECT_ID/mechat:$REVISION_ID
