@@ -9,6 +9,7 @@ steps:
     gcloud components install kubectl
     gsutil cp gs://container-kubernetes-key/kubeconfig .
     export KUBECONFIG=kubeconfig
+    gcloud container clusters get-credentials mechat --zone asia-northeast1-a
     kubectl set image deployment/frontend mechat-frontend=gcr.io/$PROJECT_ID/mechat:$REVISION_ID
 #- name: 'gcr.io/cloud-builders/kubectl'
 #  args: ['set', 'image', 'deployment/frontend', 'mechat-frontend=gcr.io/$PROJECT_ID/mechat:$REVISION_ID']
