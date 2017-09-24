@@ -15,5 +15,7 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=asia-northeast1-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=mechat'
+images:
+- 'gcr.io/$PROJECT_ID/mechat:$REVISION_ID'
 
 
