@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/mechat:$REVISION_ID', '.' ]
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [ 'compute', 'instances', 'create', 'custom-image', '--image', 'my-image' ]
 images:
 - 'gcr.io/$PROJECT_ID/mechat:$REVISION_ID'
-
-
