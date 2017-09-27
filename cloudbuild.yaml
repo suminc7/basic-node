@@ -5,3 +5,5 @@ steps:
   args: [ 'compute', 'instances', 'create', 'image-$REVISION_ID', '--image', 'my-image', '--zone', 'asia-northeast1-a' ]
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'compute', 'ssh', 'image-$REVISION_ID', '--zone', 'asia-northeast1-a' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'run', '-d', '-p', '80:8080', 'gcr.io/$PROJECT_ID/mechat:$REVISION_ID' ]
