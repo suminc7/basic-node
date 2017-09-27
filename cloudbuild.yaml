@@ -4,6 +4,6 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [ 'compute', 'instances', 'create', 'custom-image1', '--image', 'my-image', '--zone', 'asia-northeast1-a' ]
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: [ 'compute', 'ssh', 'custom-image1' ]
+  args: [ 'compute', 'ssh', 'custom-image1', '--zone', 'asia-northeast1-a' ]
 images:
 - 'gcr.io/$PROJECT_ID/mechat:$REVISION_ID'
